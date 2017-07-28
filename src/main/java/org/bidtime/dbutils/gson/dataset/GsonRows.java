@@ -263,11 +263,18 @@ public class GsonRows extends GsonData {
 		}
 	}
 
-	public void autoAddHeadData(String headName, Object o) {
-		if (this.getPosOfName(headName) < 0) {
-			addHeadData(headName, o);
-		}
-	}
+  public void autoAddHeadData(String headName, Object o) {
+    if (this.getPosOfName(headName) < 0) {
+      addHeadData(headName, o);
+    }
+  }
+
+  public void testAddHeadData(String headName, Object o) {
+    int idx = this.getPosOfName(headName);
+    if (idx >= 0) {
+      setColumnValue(idx, o);
+    }
+  }
 
 	public void addHead(String headName) {
 		addHeadData(headName, (Object)null, true);
@@ -426,16 +433,24 @@ public class GsonRows extends GsonData {
 		setHeadsValueOfObject(new String[] { arHead }, o);
 	}
 
-	public void setHeadsValueOfObject(String[] arHead, Object o) {
-		for (String head : arHead) {
-			int idx = getPosOfName(head);
-			if (idx > -1) {
-				for (int i = 0; i < this.getDataLen(); i++) {
-					this.setValue(i, idx, o);
-				}
-			}
-		}
-	}
+  public void setHeadsValueOfObject(String[] arHead, Object o) {
+    for (String head : arHead) {
+      int idx = getPosOfName(head);
+      if (idx > -1) {
+        for (int i = 0; i < this.getDataLen(); i++) {
+          this.setValue(i, idx, o);
+        }
+      }
+    }
+  }
+
+  public void setColumnValue(int idx, Object o) {
+    if (idx > -1) {
+      for (int i = 0; i < this.getDataLen(); i++) {
+        this.setValue(i, idx, o);
+      }
+    }
+  }
 
 	public void revHead(String[] arHead) throws Exception {
 		List<String> list = new ArrayList<String>();			
