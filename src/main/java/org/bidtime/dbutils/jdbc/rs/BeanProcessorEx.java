@@ -583,6 +583,7 @@ public class BeanProcessorEx implements Serializable {
       for (int i = 0; i < nCols; i++) {
         ll.add(rs.getObject(i + 1));
       }
+      list.add(ll);
     } while (rs.next());
     //
     return new GsonRows(cols, list);
