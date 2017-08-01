@@ -10,7 +10,7 @@
 	</parent>
 
 	<groupId>org.bidtime.utils</groupId>
-	<artifactId>sqlUtils</artifactId>
+	<artifactId>sqlutils</artifactId>
 	<version>1.0.1</version>
 	<packaging>jar</packaging>
 	<name>sqlutils</name>
