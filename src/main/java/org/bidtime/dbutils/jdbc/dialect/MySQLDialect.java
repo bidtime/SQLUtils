@@ -26,10 +26,16 @@ public class MySQLDialect implements Dialect {
 	public String getInsertIgnore() {
 		return "insert ignore into";
 	}
-	
-	public String getReplace() {
-		return "replace into";
-	}
+  
+  @Override
+  public String getReplace() {
+    return "replace into";
+  }
+
+  @Override
+  public String getRepalceIgnore() {
+    return "replace ignore into";
+  }
 
 	// public SqlHolder buildPageQuerySql(SqlHolder holder, PageInfo pageInfo) {
 	// String sql = holder.getSql();

@@ -530,6 +530,21 @@ public class SqlLoadUtils {
     return n;
   }
   
+  public static int repalceIgnoreBatch(DataSource ds, GsonRows g, String tblName) throws SQLException {
+    if (g == null || !g.isExistsData()) {
+      return 0;
+    }
+    int n = DbConnection.updateBatch(ds, null, g, 
+        new SQLCallback<TTableProps, GsonRows, Connection>(){
+            @Override  
+            public String getSql(TTableProps tp, GsonRows g, Connection c) throws SQLException {
+              String replSql = CAutoFitSql.getRepalceIgnore(c);                
+              return SqlUtils.getInsertSql(tblName, g.getHead(), replSql);
+          }
+    });
+    return n;
+  }
+  
   @SuppressWarnings({ "rawtypes", "unchecked", "null" })
   public static int insertIgnoreBatch(DataSource ds, List list, String tblName) throws SQLException {
     if (list == null || list.isEmpty()) {

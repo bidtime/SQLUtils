@@ -222,6 +222,10 @@ public class BasicDAO {
   public int insertIgnoreBatch(GsonRows g, String tblName) throws SQLException {
     return SqlLoadUtils.insertIgnoreBatch(getCurrentDataSource(), g, tblName);       
   }
+  
+  public int replaceIgnoreBatch(GsonRows g, String tblName) throws SQLException {
+    return SqlLoadUtils.repalceIgnoreBatch(getCurrentDataSource(), g, tblName);       
+  }
 	
 	@SuppressWarnings({ "rawtypes" })
 	public int insertIgnoreBatch(List list) throws SQLException {
