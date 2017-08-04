@@ -31,11 +31,6 @@ public class SqlServerDialect implements Dialect {
 		return "replace into";
 	}
 
-  @Override
-  public String getRepalceIgnore() {
-    return "replace ignore into";
-  }
-
 	// public SqlHolder buildPageQuerySql(SqlHolder holder, PageInfo pageInfo) {
 	// throw new UnsupportedOperationException();
 	// }

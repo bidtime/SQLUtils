@@ -17,8 +17,6 @@ public interface Dialect {
   
   public String getInsertIgnore();
   
-  public String getRepalceIgnore();
-	
 	public String getReplace();
 
 	/**

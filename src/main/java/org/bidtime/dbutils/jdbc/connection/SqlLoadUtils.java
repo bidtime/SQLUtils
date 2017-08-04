@@ -538,7 +538,7 @@ public class SqlLoadUtils {
         new SQLCallback<TTableProps, GsonRows, Connection>(){
             @Override  
             public String getSql(TTableProps tp, GsonRows g, Connection c) throws SQLException {
-              String replSql = CAutoFitSql.getRepalceIgnore(c);                
+              String replSql = CAutoFitSql.getReplace(c);                
               return SqlUtils.getInsertSql(tblName, g.getHead(), replSql);
           }
     });
