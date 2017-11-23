@@ -12,6 +12,7 @@ import org.bidtime.utils.basic.ObjectComm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@SuppressWarnings("serial")
 public class GsonRow extends GsonData {
 	
 	private static final Logger logger = LoggerFactory

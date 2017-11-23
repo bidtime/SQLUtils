@@ -1,5 +1,6 @@
 package org.bidtime.dbutils.gson.dataset;
 
+import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,7 +10,8 @@ import java.util.List;
 
 import org.bidtime.utils.basic.ArrayComm;
 
-abstract public class GsonData {
+@SuppressWarnings("serial")
+abstract public class GsonData implements Serializable {
 
 	protected HashMap<String, Integer> mapHead = new HashMap<String, Integer>();
 

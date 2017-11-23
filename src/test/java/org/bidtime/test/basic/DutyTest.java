@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.bidtime.basicdata.duty.bean.Duty;
 import org.bidtime.basicdata.duty.service.DutyService;
 import org.bidtime.test.BasicTest;
@@ -230,6 +231,13 @@ public class DutyTest extends BasicTest {
 	public void test_info_bean() throws SQLException {
 		BeanHandler<Duty> h = new BeanHandler<Duty>(Duty.class);
 		Duty dto = service.info(h, 0);
+		print(dto);
+	}
+
+	@Test
+	public void test_info_list() throws SQLException {
+		BeanListHandler<Duty> h = new BeanListHandler<Duty>(Duty.class);
+		List<Duty> dto = service.list(h);
 		print(dto);
 	}
 	

@@ -15,10 +15,8 @@
 	<packaging>jar</packaging>
 	<name>sqlutils</name>
 	<properties>
-	
-		<!--
-	    <log4j.version>1.2.17</log4j.version>
-	    -->
+
+		<!-- <log4j.version>1.2.17</log4j.version> -->
 		<c3p0.version>0.9.5.2</c3p0.version>
 		<mchange-commons-java.version>0.2.12</mchange-commons-java.version>
 		<mariadb-java-client.version>1.5.5</mariadb-java-client.version>
@@ -46,32 +44,22 @@
 		</dependency>
 
 		<dependency>
-		  <groupId>org.apache.commons</groupId>
-		  <artifactId>commons-lang3</artifactId>
-		  <version>${commons-lang3.version}</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
 		</dependency>
 
-		<!--
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4j.version}</version>
-		</dependency>
-		-->
-    
+		<!-- <dependency> <groupId>log4j</groupId> <artifactId>log4j</artifactId> 
+			<version>${log4j.version}</version> </dependency> -->
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
-    
-<!--
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency>
-    -->
+
+		<!-- <dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-log4j12</artifactId> 
+			<version>${slf4j.version}</version> </dependency> -->
 
 		<!-- spring -->
 
@@ -183,6 +171,7 @@
 			<version>${mchange-commons-java.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
 		<!--c3p0 end -->
 
 		<!-- mysql jdbc driver -->
@@ -204,10 +193,21 @@
 	</dependencies>
 
 	<build>
-		<!-- <testResources> <testResource> <directory>src/test/java</directory> 
-			<includes> <include>**/*.xml</include> </includes> </testResource> <testResource> 
-			<directory>src/test/resources</directory> <includes> <include>*.xml</include> 
-			<include>*.properties</include> </includes> </testResource> </testResources> -->
+		<testResources>
+			<testResource>
+				<directory>src/test/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</testResource>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<includes>
+					<include>*.xml</include>
+					<include>*.properties</include>
+				</includes>
+			</testResource>
+		</testResources>
 
 		<plugins>
 			<plugin>
